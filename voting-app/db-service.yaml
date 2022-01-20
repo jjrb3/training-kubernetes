@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 5432
-      targetPort: 5432
-    selector:
-      app: db
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: db

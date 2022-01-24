@@ -1,10 +1,9 @@
 apiVersion: apps/v1
-kind: Desployment
+kind: Deployment
 metadata:
+  name: worker
   labels:
     app: worker
-  name: worker
-  namespace: vote
 spec:
   replicas: 1
   selector:
@@ -16,5 +15,5 @@ spec:
         app: worker
     spec:
       containers:
-        - image: dockersamples/examplevotingapp_worker
-          name: worker
+      - image: dockersamples/examplevotingapp_worker
+        name: worker

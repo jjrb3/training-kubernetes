@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: result
-      spec:
-        containers:
-        - images: dockersamples/examplevotingapp_result:before
-          name: result
+    spec:
+      containers:
+      - image: dockersamples/examplevotingapp_result:before
+        name: result

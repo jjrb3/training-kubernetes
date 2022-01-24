@@ -6,21 +6,20 @@ metadata:
     app: redis
 spec:
   replicas: 1
-    selector:
-      matchLabels:
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
         app: redis
-    template:
-      metadata:
-        labels:
-          app: redis
-      spec:
-        containers:
-        - image: redis:alphine
-          name: redis
-          volumeMounts:
-          - mountPath: /data
-            name: redis-data
-        volumes:
-        - name: redis-data
-            emptyDir: {}
-
+    spec:
+      containers:
+      - image: redis:alphine
+        name: redis
+        volumeMounts:
+        - mountPath: /data
+          name: redis-data
+      volumes:
+      - name: redis-data
+        emptyDir: {}
